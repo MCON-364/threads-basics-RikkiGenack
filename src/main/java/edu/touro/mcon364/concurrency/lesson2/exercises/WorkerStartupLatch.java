@@ -49,7 +49,7 @@ public class WorkerStartupLatch {
             new Thread(() -> {
                 startedNames.add(Thread.currentThread().getName());
                 ready.countDown();
-            }, "worker-" + i).start();
+            }, "worker-" + id).start();
         }
 
         // TODO: make the calling thread wait here until every worker has signalled
